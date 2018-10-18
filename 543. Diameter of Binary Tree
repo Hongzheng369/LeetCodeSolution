@@ -16,17 +16,16 @@
             return 0;
         }
         maxDiameter = 0;
-        diameterOfBinaryTreeCore(root);
-        return maxDiameter - 1;
+        diameter(root);
+        return maxDiameter -1 ;
     }
-
-    private int diameterOfBinaryTreeCore(TreeNode root) {
+    private int diameter(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        int left = diameterOfBinaryTreeCore(root.left);
-        int right = diameterOfBinaryTreeCore(root.right);
-        maxDiameter = Math.max(maxDiameter, 1 + left + right);
-        return 1 + Math.max(left, right);
+        int left = diameter(root.left);
+        int right = diameter(root.right);
+        maxDiameter = Math.max(maxDiameter, 1+left + right);
+        return  1+Math.max(left, right);
     }
 }
